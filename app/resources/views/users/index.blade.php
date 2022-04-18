@@ -43,4 +43,5 @@
             {{ $all_users->links() }}
         </div>
     </div>
+    @include('layouts.tweet', ['user' => auth()->user()])
 @endsection
