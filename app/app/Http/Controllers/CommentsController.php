@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CommentValidates\PostRequest;
 use App\Models\Comment;
-use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
     /**
-     * Store a newly created resource in storage.
+     * 140字以内かどうかチェックし、storeComment()で保存する。
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
