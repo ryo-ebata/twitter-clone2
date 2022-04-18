@@ -29,9 +29,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-white bg-primary shadow">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/tweets') }}">
+                <i class="fab fa-twitter text-light m-2"></i>
+                <a class="navbar-brand text-light" href="{{ url('/tweets') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -42,13 +43,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tweets.index') }}">タイムライン</a>
+                            <a class="nav-link text-light hov" href="{{ route('tweets.index') }}">タイムライン</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('users.index') }}">ユーザー</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('users/' .$user->id) }}">プロフィール</a>
+                            <a class="nav-link text-light hov" href="{{ route('users.index') }}">ユーザー</a>
                         </li>
                     </ul>
 
@@ -69,11 +67,14 @@
                             @endif
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item"  href="{{ url('users/' .$user->id) }}">
+                                            プロフィール
+                                        </a>
                                         <a class="dropdown-item"  href="{{ url('users/' .$user->id .'/edit') }}">
                                             プロフィール編集
                                         </a>
@@ -99,6 +100,6 @@
         </main>
     </div>
     
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/likes.js') }}"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!-- New Tweet button -->
 <div class="new_tweet">
-    <button type="button" id="new_tweet" data-toggle="modal" data-target="#modal1">
+    <button class="bg-primary" type="button" id="new_tweet" data-toggle="modal" data-target="#modal1">
         ＋
     </button>
 
@@ -11,7 +11,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="label1">新規ツイート</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button class="rounded" type="button" class="close" data-dismiss="modal" aria-label="Close" width="25" height="25">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
