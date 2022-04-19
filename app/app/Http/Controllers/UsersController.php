@@ -69,7 +69,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * show.blade.phpにデータを渡す。
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -123,3 +123,4 @@ class UsersController extends Controller
 
         return redirect('users/'.$user->id);
     }
+}
