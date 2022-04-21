@@ -31,7 +31,7 @@
                             <label for="screen_name" class="col-md-4 col-form-label text-md-right">{{ __('アカウント名') }}</label>
 
                             <div class="col-md-6">
-                                <input id="screen_name" type="text" class="form-control @error('screen_name') is-invalid @enderror" name="screen_name" value="{{ $user->screen_name }}" required autocomplete="screen_name" autofocus>
+                                <input id="screen_name" type="text" class="form-control @error('screen_name') is-invalid @enderror" name="screen_name" value="{{ auth()->user()->screen_name }}" required autocomplete="screen_name" autofocus>
 
                                 @error('screen_name')
                                     <span class="invalid-feedback" role="alert">
