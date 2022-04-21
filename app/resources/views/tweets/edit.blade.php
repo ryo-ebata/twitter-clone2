@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-sm">
-                <div class="card-header">Update</div>
+                <div class="card-header">{{ __('Edit') }}</div>
 
                 <div  class="card-body">
                     <form method="POST" action="{{ route('tweets.update', [$tweets->id]) }}">
@@ -33,9 +33,9 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-right">
-                                <p class="mb-4 text-danger">140文字以内</p>
+                                <p class="mb-4 text-danger">{{ __('140 characters or less.') }}</p>
                                 <button type="submit" class="btn btn-primary">
-                                    ツイートする
+                                    {{ __('Tweet') }}
                                 </button>
                             </div>
                         </div>

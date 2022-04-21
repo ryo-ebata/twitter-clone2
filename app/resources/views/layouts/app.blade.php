@@ -43,10 +43,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-light hov" href="{{ route('tweets.index') }}">タイムライン</a>
+                            <a class="nav-link text-light hov" href="{{ route('tweets.index') }}">{{ __('Time Line') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light hov" href="{{ route('users.index', ['user' => $user]) }}">ユーザー</a>
+                            <a class="nav-link text-light hov" href="{{ route('users.index') }}">{{ __('Users') }}</a>
                         </li>
                     </ul>
 
@@ -56,13 +56,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login', ['user' => $user]) }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register', ['user' => $user]) }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                             @else
@@ -72,11 +72,11 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item"  href="{{ url('users/' .$user->id, ['user' => $user]) }}">
-                                            プロフィール
+                                        <a class="dropdown-item"  href="{{ url('users/' .auth()->user()->id) }}">
+                                            {{ __('Profile') }}
                                         </a>
-                                        <a class="dropdown-item"  href="{{ url('users/' .$user->id .'/edit', ['user' => $user]) }}">
-                                            プロフィール編集
+                                        <a class="dropdown-item"  href="{{ url('users/' .auth()->user()->id .'/edit') }}">
+                                            {{ __('Edit Profile') }}
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

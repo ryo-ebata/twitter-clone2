@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div class="card mt-5">
+                <div class="card-header bg-primary text-light">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -33,7 +33,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary shadow-sm">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
@@ -41,6 +41,18 @@
                     </form>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-primary shadow-sm flex-fill">
+                        <a href="{{ route('login') }}" class="text-light text-decoration-none">{{ __('Login') }}</a>
+                    </button>
+                    <button type="button" class="btn btn-danger shadow-sm flex-fill">
+                        <a href="{{ route('register') }}" class="text-light text-decoration-none">{{ __('Register') }}</a>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

@@ -29,8 +29,8 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <a href="{{ url('tweets/' .$tweet->id .'/edit') }}" class="dropdown-item">編集</a>
-                                    <button type="submit" class="dropdown-item del-btn">削除</button>
+                                    <a href="{{ url('tweets/' .$tweet->id .'/edit') }}" class="dropdown-item">{{ __('Edit') }}</a>
+                                    <button type="submit" class="dropdown-item del-btn">{{ __('Delete') }}</button>
                                 </form>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                     </li>
                 @empty
                     <li class="list-group-item shadow-sm">
-                        <p class="mb-0 text-secondary">コメントはまだありません。</p>
+                        <p class="mb-0 text-secondary">{{ __('There is no comment') }}</p>
                     </li>
                 @endforelse
                 <li class="list-group-item shadow-sm">
@@ -116,9 +116,9 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 text-right">
-                                    <p class="mb-4 text-danger">140文字以内</p>
+                                    <p class="mb-4 text-danger">{{ __('140 characters or less.') }}</p>
                                     <button type="submit" class="btn btn-primary">
-                                        ツイートする
+                                        {{ __('Tweet') }}
                                     </button>
                                 </div>
                             </div>

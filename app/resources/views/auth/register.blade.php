@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card shadow-sm  mt-5">
+                <div class="card-header bg-primary text-light">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -77,12 +77,23 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary shadow-sm">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+
+            <div class="card mt-3 shadow-sm">
+                <div class="card-body">
+                    <label class="col-md-4 col-form-label text-md-end"> 
+                        {{ __('Already registered?') }}
+                    </label>
+                    <button type="button" class="btn btn-primary shadow-sm">
+                        <a href="{{ route('login') }}" class="text-light text-decoration-none">{{ __('Login') }}</a>
+                    </button>
                 </div>
             </div>
         </div>

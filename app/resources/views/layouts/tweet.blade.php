@@ -10,7 +10,7 @@
 
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="label1">新規ツイート</h5>
+                    <h5 class="modal-title" id="label1">{{ __('New Tweet') }}</h5>
                     <button class="rounded" type="button" class="close" data-dismiss="modal" aria-label="Close" width="25" height="25">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -42,7 +42,7 @@
                             <div class="col-md-12 text-right">
                                 <p class="mb-4 text-danger">140文字以内</p>
                                 <button type="submit" class="btn btn-primary">
-                                    ツイートする
+                                    {{ __('Tweet') }}
                                 </button>
                             </div>
                         </div>

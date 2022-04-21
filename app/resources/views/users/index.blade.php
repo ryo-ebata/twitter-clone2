@@ -15,7 +15,7 @@
 
                             @if (auth()->user()->isFollowed($user->id))
                                 <div class="px-2">
-                                    <span class="px-1 bg-secondary text-light">フォローされています</span>
+                                    <span class="px-1 bg-secondary text-light">{{ __('Follwed by') }}</span>
                                 </div>
                             @endif
                             <div class="d-flex justify-content-end flex-grow-1">
@@ -24,13 +24,13 @@
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
-                                        <button type="submit" class="btn btn-danger">フォロー解除</button>
+                                        <button type="submit" class="btn btn-danger">{{ __('Unfollow') }}</button>
                                     </form>
                                 @else
                                     <form action="{{ route('follow', $user->id) }}" method="POST">
                                         {{ csrf_field() }}
 
-                                        <button type="submit" class="btn btn-primary">フォローする</button>
+                                        <button type="submit" class="btn btn-primary">{{ __('Follow') }}</button>
                                     </form>
                                 @endif
                             </div>

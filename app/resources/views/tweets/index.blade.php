@@ -32,8 +32,8 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <a href="{{ url('tweets/' .$timeline->id .'/edit') }}" class="dropdown-item">編集</a>
-                                            <button type="submit" class="dropdown-item del-btn">削除</button>
+                                            <a href="{{ url('tweets/' .$timeline->id .'/edit') }}" class="dropdown-item">{{ __('Edit') }}</a>
+                                            <button type="submit" class="dropdown-item del-btn">{{ __('Delete') }}</button>
                                         </form>
                                     </div>
                                 </div>
