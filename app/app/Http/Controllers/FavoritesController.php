@@ -19,6 +19,7 @@ class FavoritesController extends Controller
         $user = auth()->user();
         $tweet_id = $request->tweet_id;
         $is_favorite = $favorite->isFavorite($user->id, $tweet_id);
+        sleep(1);
 
         if(!$is_favorite){
             $favorite->storeFavorite($user->id, $tweet_id);
