@@ -46,7 +46,7 @@
                             <a class="nav-link text-light hov" href="{{ route('tweets.index') }}">タイムライン</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light hov" href="{{ route('users.index') }}">ユーザー</a>
+                            <a class="nav-link text-light hov" href="{{ route('users.index', ['user' => $user]) }}">ユーザー</a>
                         </li>
                     </ul>
 
@@ -75,7 +75,7 @@
                                         <a class="dropdown-item"  href="{{ url('users/' .$user->id) }}">
                                             プロフィール
                                         </a>
-                                        <a class="dropdown-item"  href="{{ url('users/' .$user->id .'/edit') }}">
+                                        <a class="dropdown-item"  href="{{ url('users/' .$user->id .'/edit', ['user' => $user]) }}">
                                             プロフィール編集
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
