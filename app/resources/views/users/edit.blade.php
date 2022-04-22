@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-sm">
-                <div class="card-header">{{ $user->name }}{{ __(' Edit Profile') }}</div>
+                <div class="card-header">{{ __(' Edit Profile') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ url('users/' .$user->id) }}" enctype="multipart/form-data">
