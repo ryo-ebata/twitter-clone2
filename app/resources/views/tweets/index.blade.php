@@ -16,10 +16,11 @@
                             <div class="d-flex justify-content-end flex-grow-1">
                                 <p class="mb-0 text-secondary">{{ $timeline->created_at->format('Y-m-d H:i') }}</p>
                             </div>
-                            <div class="card-body">
-                                {!! nl2br(e($timeline->text)) !!}
-                            </div>
                         </div>
+                        <div class="card-body">
+                            {!! nl2br(e($timeline->text)) !!}
+                        </div>
+                        
 
                         <div class="card-footer py-1 d-flex justify-content-end bg-white">
                             @if ($timeline->user->id === Auth::user()->id)

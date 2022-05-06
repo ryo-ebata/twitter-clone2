@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->comment('ユーザID');
-            $table->unsignedInteger('tweet_id')->comment('ツイートID');
+            $table->string('user_id')->comment('ユーザID');
+            $table->string('tweet_id')->comment('ツイートID');
             $table->string('text')->comment('本文');
             $table->softDeletes();
             $table->timestamps();
@@ -26,13 +26,13 @@ return new class extends Migration
             $table->index('tweet_id');
 
             $table->foreign('user_id')
-                ->references('id')
+                ->references('uuid')
                 ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
             $table->foreign('tweet_id')
-                ->references('id')
+                ->references('uuid')
                 ->on('tweets')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

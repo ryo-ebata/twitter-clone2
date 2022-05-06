@@ -12,6 +12,17 @@
                         @csrf
 
                         <div class="row mb-3">
+                            <label for="profile_image" class="col-md-4 col-form-label text-md-end">{{ __('profile_image') }}</label>
+                            <input type="file" name="profile_image" class="@error('profile_image') is-invalid @enderror" autocomplete="profile_image">
+                            <br>
+                            @error('profile_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">

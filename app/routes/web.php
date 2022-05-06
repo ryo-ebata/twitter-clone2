@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\UsersController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', [TweetsController::class, 'index']);
 
     Route::resource('users', UsersController::class, ['only' => ['index', 'show', 'edit', 'update']]);
     Route::resource('tweets', TweetsController::class, ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);

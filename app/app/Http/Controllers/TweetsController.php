@@ -117,6 +117,12 @@ class TweetsController extends Controller
     public function update(PostRequest $request, Tweet $tweet)
     {
         $data = $request->all();
+        $user_id = auth()->id();
+
+        if($request->user()->isNot($tweet->user)){
+            abord(403);
+        }
+
         $tweet->updateTweet($tweet->id, $data);
         return redirect('tweets');
     }

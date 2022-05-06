@@ -7,16 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Follower extends Model
 {
-    protected $primaryKey = [
+    protected $primaryKey = 'id';
+
+    /* protected $primaryKey = [
         'following_id',
         'followed_id'
-    ];
+    ];*/
+
     protected $fillable = [
         'following_id',
         'followed_id'
     ];
     public $timestamps = false;
-    public $incrementing = false;
+    //public $incrementing = false;
 
     /**
      * フォローしているユーザー数を取得する。

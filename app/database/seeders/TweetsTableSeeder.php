@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Tweet;
+use Illuminate\Support\Str;
+use App\Models\User;
 
 class TweetsTableSeeder extends Seeder
 {
@@ -14,10 +16,14 @@ class TweetsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        $user = new User;
+        $all_users = $user->get();
+
+        foreach ($all_users as $user) {
             Tweet::create([
-                'user_id'    => $i,
-                'text'       => 'これはテスト投稿' .$i,
+                'uuid'       => Str::uuid(),
+                'user_id'    => $user->uuid,
+                'text'       => 'これはテスト投稿',
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

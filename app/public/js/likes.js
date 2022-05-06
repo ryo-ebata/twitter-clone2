@@ -1,5 +1,5 @@
 $(".Likes-Icon").on("click", function () {
-    let $btn = $(this);
+    const $btn = $(this);
 
     if ($btn.hasClass("on")) {
         $btn.removeClass("on");

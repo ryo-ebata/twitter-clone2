@@ -19,6 +19,12 @@ class Tweet extends Model
         'text'
     ];
 
+    protected $primaryKey = 'uuid';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
     /**
      * User::classのデータを参照。
      */

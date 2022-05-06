@@ -16,6 +16,7 @@
     height: 55px;
     border-radius: 50%;
     transition: background-color 0.6s;
+    cursor: pointer;
 }
 
 .Liked-Icon{
@@ -28,6 +29,7 @@
     background-repeat: no-repeat;
     width: 55px;
     height: 55px;
+    cursor: pointer;
 }
 
 .Likes-Icon:hover{

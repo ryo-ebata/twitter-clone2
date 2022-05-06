@@ -14,18 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tweets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('user_id')->comment('ユーザID');
+            $table->string('uuid', 36)->unique()->primary();
+            $table->string('user_id')->comment('ユーザID');
             $table->string('text')->comment('本文');
             $table->softDeletes();
             $table->timestamps();
 
-            $table->index('id');
+            $table->index('uuid');
             $table->index('user_id');
             $table->index('text');
 
             $table->foreign('user_id')
-                ->references('id')
+                ->references('uuid')
                 ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

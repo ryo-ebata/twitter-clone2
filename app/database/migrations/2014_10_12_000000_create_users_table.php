@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            //$table->increments('id');
+
+            $table->string('uuid', 36)->unique()->primary();
             $table->string('screen_name')->unique()->null()->comment('アカウント名');
             $table->string('name')->null()->comment('ユーザ名');
             $table->string('profile_image')->nullable()->comment('プロフィール画像')->default('https://placehold.jp/50x50.png');

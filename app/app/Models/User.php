@@ -25,6 +25,12 @@ class User extends Authenticatable
         'password'
     ];
 
+    protected $primaryKey = 'uuid';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
     /**
      * User::class, 'followers', 'followed_id', 'following_id'のリレーション。中間テーブルのデータを参照。
      */
